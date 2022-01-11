@@ -1,0 +1,42 @@
+body {
+    margin: 0;
+}
+
+.header {
+    background: lightgrey;
+    padding: 32px;
+}
+
+.header__title {
+    color: green;
+    text-align: center;
+}
+
+.form {
+    margin: auto;
+    padding: 32px;
+    max-width: 1024px;
+}
+
+.form__group {
+    margin-bottom: 32px;
+}
+
+.form__label {
+    font-weight: bold;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.form__submit {
+    background: green;
+    border: 1px solid lightgreen;
+    color: white;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.form__submit:hover {
+    background: darkgreen;
+    border-color: green;
+}

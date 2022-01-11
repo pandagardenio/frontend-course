@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>My example form</title>
+      <link rel="stylesheet" href="./assets/example5.css" type="text/css" media="all"/>
+      <script type="text/javascript" async="" src="./assets/example5.js"></script>
+   </head>
+   <body>
+       <main class="app">
+           <header class="header">
+               <h1 class="header__title">What's your favourite animal?</h1>
+           </header>
+            <form class="form">
+                <div class="form__group">
+                    <label class="form__label" for="form-name">Your name</label>
+                    <input id="form-name" type="text"/>
+                </div>
+                <div class="form__group">
+                    <label class="form__label" for="form-favourite-animals">Your favourite animals</label>
+                    <select id="form-favourite-animals">
+                        <option value="pandas">Pandas</option>
+                        <option value="koalas">Koalas</option>
+                        <option value="cats">Cats</option>
+                    </select>
+                </div>
+                <div class="form__group">
+                    <label class="form__label" for="form-comments">Any comments?</label>
+                    <textarea id="form-comments"></textarea>
+                </div>
+                <div class="form__group">
+                    <button class="form__submit" type="submit" id="form-submit">Submit your data</button>
+                </div>
+            </form>
+       </main>
+   </body>
+</html>
