@@ -34,9 +34,7 @@ const apiUrl = 'https://movie-quote-api.herokuapp.com';
 // We are going to add some styles to the list of shows we have created
 
 
-// Create a css file called movie-quote.css in the code editor
-
-// Go to the movie-quote.html file and link the css file we just created in your html using a "link" tag
+// Go to the movie-quote.html file and link the css file "movie-quote.css" in your html using a "link" tag
 
 // Open the css file in the code editor and create a "show-slugs__list" class selector and set the following properties:
 // list-style --> none
@@ -48,6 +46,7 @@ const apiUrl = 'https://movie-quote-api.herokuapp.com';
 // color --> use your favourite color
 
 // Modify the code where we are creating the li elements and add the highlight class only for the odd elements
+
 
 // #### Part 3
 // We are going to add events to the HTML we just created

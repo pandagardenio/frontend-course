@@ -31,7 +31,7 @@ but, how do we use the data returned from the server?
 let's open the console and see what does the following snippet return.
 
 ```javascript
-let a = fetch("http://google.com");
+let a = fetch("https://movie-quote-api.herokuapp.com");
 ```
 
 ## Promises
@@ -54,7 +54,7 @@ We use the methods **then** and **catch** to handle the different
 outcomes of the promise (**fulfilled** and  **rejected** respectively)
 
 ```javascript
-fetch("https://google.com")
+fetch("https://movie-quote-api.herokuapp.com")
   .then((result) =>
     console
       .log("the promise is fulfilled, and returned" + result)
@@ -71,7 +71,7 @@ To get the JSON response from fetch we need to use promise's **then**
 method:
 
 ```javascript
-fetch("http://api.open-notify.org/iss-now.json")
+fetch("https://movie-quote-api.herokuapp.com")
   .then(data => data.json())
   .then(json => console.log(json))
 ```

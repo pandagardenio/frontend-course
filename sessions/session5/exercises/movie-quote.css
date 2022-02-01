@@ -1,0 +1,11 @@
+.main {
+    display: flex;
+}
+
+.main .show-slugs {
+    width: 50%;
+}
+
+.main .show-quote {
+    width: 50%;
+}
