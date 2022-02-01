@@ -239,23 +239,22 @@ have several ways to do it.
 - `document.getElementById` return the element with the given id
 - `document.getElementsByTagName` return all occurrences of that HTML tag
 - `document.getElementsByClassName` return all occurrences of elements with that class
-
 ## A small reminder on CSS Selectors
 
 ```css
-    tagname {
+    img {
         background: black;
     }
 
-    .classname {
+    .rounded {
         background: black;
     }
 
-    #idname {
+    #my-name {
         background: black;
     }
 
-    .className nestedtagname {
+    .rounded img {
         background: black;
     }
 
