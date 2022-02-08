@@ -1,0 +1,23 @@
+{
+  "name": "frontend-course",
+  "version": "1.0.0",
+  "description": "1. [Session 1 - Showing content in the Browser](./sessions/session1) 2. [Session 2 - CSS](./sessions/session2) 3. [Session 3 and 4 - Javascript for the web](./sessions/session3) 4. [Session 5 and 6 - Communicating with the server](./sessions/session5)",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pandagardenio/frontend-course.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pandagardenio/frontend-course/issues"
+  },
+  "homepage": "https://github.com/pandagardenio/frontend-course#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.2"
+  }
+}

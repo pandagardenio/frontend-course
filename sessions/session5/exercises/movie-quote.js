@@ -11,10 +11,14 @@ const apiUrl = 'https://movie-quote-api.herokuapp.com';
 
 fetch(apiUrl)
     .then(data => data.json())
+<<<<<<< HEAD
     .then(json => console.log(json.showSlugs))
 
 
 // YOUR CODE HERE
+=======
+    .then(json => console.log(json));
+>>>>>>> 1dede38c4bf667d0df7fad404c9c15ba4ac216c6
 
 //---------------------//
 
@@ -22,7 +26,9 @@ fetch(apiUrl)
 
 //---------------------//
 
-// YOUR CODE HERE
+fetch(apiUrl)
+    .then(data => data.json())
+    .then(json => console.log(json.showSlugs))
 
 //---------------------//
 
@@ -52,7 +58,33 @@ fetch(apiUrl)
     })
 
 
-// YOUR CODE HERE
+const divContainer = document.querySelector('.show-slugs');
+
+const ulContainer = document.createElement('ul');
+ulContainer.classList.add('show-slugs__list');
+
+// {
+// 	"developer": "Faran Taghavi",
+// 	"email": "farantgh@gmail.com",
+// 	"website": "https://movie-quote-api.herokuapp.com/",
+// 	"github": "https://github.com/F4R4N",
+// 	"showSlugs": ["mindhunter", "true-detective", "soprano", "the-wire", "sillicon-valley", "the-office", "space-force", "fargo", "fargo-s04", "fargo-s03", "ozark", "lucifer", "american-psycho", "the-machinist", "god-father", "the-silence-of-the-lambs", "forrest-gump", "spiral-from-the-book-of-saw"],
+// 	"paths": ["v1/quote/", "v1/shows/<showSlugs>", "v1/shows/", "v1/quote/?censored"]
+// }
+fetch(apiUrl)
+    .then(data => data.json())
+    .then(json => {
+        json.showSlugs.forEach((showSlug, index) => {
+            const liContainer = document.createElement('li');
+            liContainer.classList.add('show-slugs__list-item');
+            liContainer.innerText = showSlug;
+            if (index % 2 === 0) {
+                liContainer.classList.add('highlight');
+            }
+            ulContainer.appendChild(liContainer);
+        })
+        divContainer.appendChild(ulContainer)
+    });
 
 //---------------------//
 
@@ -63,7 +95,7 @@ fetch(apiUrl)
 // Go to the movie-quote.html file and link the css file "movie-quote.css" in your html using a "link" tag
 
 // Open the css file in the code editor and create a "show-slugs__list" class selector and set the following properties:
-// list-style --> none
+// list-style: none
 
 // Open the css file in the code editor and create a "show-slugs__list-item" class selector and set the following properties:
 // padding --> 8px

@@ -10,14 +10,27 @@
     width: 50%;
 }
 
+<<<<<<< HEAD
 .show-slugs__list{
     list-style: none;
 }
 
 .show-slugs__list-item{
+=======
+.show-slugs__list {
+    list-style: none;
+}
+
+.show-slugs__list-item {
+>>>>>>> 1dede38c4bf667d0df7fad404c9c15ba4ac216c6
     padding: 8px;
 }
 
 .highlight {
+<<<<<<< HEAD
     color: red;
 }
+=======
+    color: green;
+}
+>>>>>>> 1dede38c4bf667d0df7fad404c9c15ba4ac216c6
