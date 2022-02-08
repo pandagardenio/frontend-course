@@ -1,0 +1,23 @@
+.main {
+    display: flex;
+}
+
+.main .show-slugs {
+    width: 50%;
+}
+
+.main .show-quote {
+    width: 50%;
+}
+
+.show-slugs__list{
+    list-style: none;
+}
+
+.show-slugs__list-item{
+    padding: 8px;
+}
+
+.highlight {
+    color: red;
+}

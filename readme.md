@@ -2,4 +2,11 @@
 
 1. [Session 1 - Showing content in the Browser](./sessions/session1)
 2. [Session 2 - CSS](./sessions/session2)
-3. [Session 3 - Javascript for the web](./sessions/session3)
+3. [Session 3 and 4 - Javascript for the web](./sessions/session3)
+4. [Session 5 and 6 - Communicating with the server](./sessions/session5)
+
+
+## Useful Visual Studio Code extensions
+
+ - [Visual Studio IntelliCode](https://marketplace.visualstudio.com/items?itemName=VisualStudioExptTeam.vscodeintellicode)
+ - [Live Preview](https://marketplace.visualstudio.com/items?itemName=ms-vscode.live-server)
