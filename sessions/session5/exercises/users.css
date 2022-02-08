@@ -1,0 +1,93 @@
+.main {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.section {
+    width: 300px;
+    padding: 32px;
+}
+
+.users__list {
+    list-style: none;
+}
+
+.users__list-item {
+    cursor: pointer;
+    color: blue;
+    padding: 8px;
+}
+
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.form-group input {
+    display: block;
+    padding: 8px;
+    width: 100%;
+}
+
+.form-group textarea {
+    display: block;
+    padding: 8px;
+    width: 100%;
+}
+
+.button {
+    cursor: pointer;
+    padding: 8px 12px;
+    border-width: 1px;
+}
+
+.button--primary {
+    background-color: green;
+    border-color: green;
+    color: white;
+}
+
+.button--primary:hover {
+    background-color: darkgreen;
+    border-color: darkgreen;
+}
+
+.button--secondary {
+    background-color: blue;
+    border-color: blue;
+    color: white;
+}
+
+.button--secondary:hover {
+    background-color: darkblue;
+    border-color: darkblue;
+}
+
+.notification {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 250px;
+    padding: 32px;
+    border-bottom: 4px solid black;
+    transition: right 1s;
+    -webkit-box-shadow: 5px 5px 15px 5px #000000;
+    box-shadow: 5px 5px 15px 5px #000000;
+}
+
+.notification--visible {
+    right: 0;
+}
+
+.notification--success {
+    border-color: darkgreen;
+}
+
+.notification--error {
+    border-color: red;
+}

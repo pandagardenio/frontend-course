@@ -1,0 +1,219 @@
+// <---------User creation form code----------->
+
+function createUser(event) {
+    event.preventDefault();
+
+    const fetchUrl = 'https://mscbt-luis-grande.herokuapp.com/session5/users';
+    const fetchOptions = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(getUserData())
+    };
+
+    // YOUR FETCH CODE HERE
+}
+
+function getUserData() {
+    return {
+        userName: getUserName(),
+        email: getEmail(),
+        favouriteBand: getFavouriteBand(),
+        favouriteDish: getFavouriteDish(),
+        somethingAboutYou: getSomethingAboutYou()
+    };
+}
+
+function getUserName() {
+    const userNameInput = document.querySelector('#userName');
+    return userNameInput.value;
+}
+
+function getEmail() {
+    // YOUR CODE HERE
+}
+
+function getFavouriteBand() {
+    // YOUR CODE HERE
+}
+
+function getFavouriteDish() {
+    // YOUR CODE HERE
+}
+
+function getSomethingAboutYou() {
+    // YOUR CODE HERE
+}
+
+// Use document.querySelector and addEventListener to select the form in the HTML (you can do it via the tag selector or via the id selector) and add a listener to the "submit" event with the eventHandler "createUser"
+
+// YOUR CODE HERE FOR EVENT HANDLING
+
+// <---------End of user creation form code----------->
+
+// <---------Refresh user list code----------->
+
+function refreshUserList() {
+    const fetchUrl = 'https://mscbt-luis-grande.herokuapp.com/session5/users';
+
+    // YOUR FETCH CODE HERE
+}
+
+function renderUserList(users) {
+    // Select HTML element with id user-list
+    const userList = document.querySelector('#user-list');
+    // Remove everything in the user-list container
+    userList.innerHTML = '';
+    // For each user, execute code
+    users.forEach(user => {
+        // Create "li" tag
+        const listElement = document.createElement('li');
+        // Add classes for styling
+        listElement.classList.add('users__list-item');
+        // Add text list element
+        listElement.innerText = user.userName;
+
+        // YOUR CODE FOR EVENT HANDLING HERE
+
+        // Append list element to userList element
+        userList.appendChild(listElement);
+    });
+}
+
+document.getElementById('refresh-users-button').addEventListener('click', refreshUserList);
+
+// <---------End of refresh user list code----------->
+
+// <---------Get user info code----------->
+
+function getUserInfo(userName) {
+    const fetchUrl = 'https://mscbt-luis-grande.herokuapp.com/session5/users/' + userName;
+
+    // YOUR FETCH CODE HERE
+}
+
+function renderUserInfo(userData) {
+    // Select HTML element with "userInfo" id
+    // YOUR CODE HERE
+
+    // Set innerHTML property of selected element to an empty string
+    // YOUR CODE HERE
+
+    // Loop over the userData object (Remember, you can use the for...in loop style we saw in session3)
+    for (userKey in userData) {
+        // Create an h3 element
+        // YOUR CODE HERE
+
+        // Set the innerText property of the h3 element to the key of the loop interation
+        // YOUR CODE HERE
+
+        // Create a p element
+        // YOUR CODE HERE
+
+        // Set the innerText property of the p element to the value of the loop iteration
+        // YOUR CODE HERE
+
+        // Append the h3 element to the userInfo container
+        // YOUR CODE HERE
+
+        // Append the p element to the userInfo container
+        // YOUR CODE HERE
+
+    }
+}
+
+// <---------End of get user info code----------->
+
+
+// <---------Part 1----------->
+
+// Fill in the code for getEmail, getFavouriteBand, getFavouriteDish and getSomethingAboutYou functions to get the values of the inputs in the form (you can use getUserName as an example)
+
+// Fill in the code for createUser function to use fetch to call the "fetchUrl" with the provided "fetchOptions".
+
+// Fill in the code where it says YOUR CODE HERE FOR EVENT HANDLING
+
+// In the web browser, fill in the data in the form to tell us something about you and click the create user button
+
+// <--------- End of Part 1----------->
+
+// <---------Part 2----------->
+
+// Fill in the code refreshUserList function to use fetch to call the "fetchUrl", extract the json from the response and render a list of users (Hint: there is a function already written for that)
+
+// Click the refresh user list button and see what happens. We will discus what's happened
+
+// Modify the function that renders the user list and add an event handler to each list element that when the elements gets clicked, executes the getUserInfo handler passing the user as a parameter of the function call
+
+// <--------- End of Part 2----------->
+
+// <---------Part 3----------->
+
+// Fill in the code for getUserInfo function to use fetch to cal the "fetchUrl", extract the json from the response and render the info for that user
+
+// Fill in the code of renderUserInfo to actually render the info for the user we just fetched from the web server.
+
+// Now, when clicking on one of the users in the user list you should get a detail of the data for that user
+
+// <--------- End of Part 3----------->
+
+// <---------Homework----------->
+
+// Feel free to join in groups to do the homework (Top 3/4 people). If that's the case, put the group members in the top of the file as a code comment
+// Please push a branch to the repo with your name/s as branch name with the solutions for homework
+
+// In Part 1, show a success notification when receiving the response from the server when creating a new user
+// Hint: there are already some functions implemented to show notifications (Check the bottom of the file)
+// In Part 1, create an if else clause that executes two different things. If the json we get from the response contains a key "errorMessage", then show an error notification and if not, show the success notification we just created.
+// Note: The web server will return this "errorMessage" key in the response when trying to create a user who has a userName that has already been used.
+
+// Do Part 3 of the exercise
+
+// If you want to prepare for next class, here you have a couple of CodeAcademy links that will be very useful:
+// https://www.codecademy.com/courses/learn-css/lessons/box-model-intro/exercises/box-model-intro
+// https://www.codecademy.com/courses/learn-css/lessons/css-display-positioning
+
+// <---------End of homework----------->
+
+// <---------Notification code----------->
+function showUserCreatedNotification(userName) {
+    showNotification('success', userName + ' user created');
+}
+
+function showErrorNotification(message) {
+    showNotification('error', message);
+}
+
+function showNotification(type, content) {
+    // Create a div tag for the container of the notification
+    const notificationContainer = document.createElement('div');
+    // Add classes to the notification container
+    notificationContainer.classList.add('notification');
+    if (type === 'success') {
+        notificationContainer.classList.add('notification--success');
+    }
+    if (type === 'error') {
+        notificationContainer.classList.add('notification--error');
+    }
+    // Create a p tag for the content for the notification
+    const notificationContent = document.createElement('p');
+    // Add classes to the notification content
+    notificationContent.classList.add('notification__content');
+    // Add text to the notification content
+    notificationContent.innerText = content;
+    // Append the p tag representing the content to the div tag representing the container
+    notificationContainer.appendChild(notificationContent);
+    // Append the notification element to the body tag
+    document.querySelector('body').appendChild(notificationContainer);
+    // Add visible class after 100ms to allow notification animation
+    setTimeout(() => {
+        notificationContainer.classList.add('notification--visible');
+    }, 100);
+    // Remove visible class after 5000ms to allow notification animation
+    setTimeout(() => {
+        notificationContainer.classList.remove('notification--visible');
+    }, 5000);
+}
+
+// <---------End of notification code----------->
