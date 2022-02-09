@@ -12,7 +12,9 @@ function createUser(event) {
         body: JSON.stringify(getUserData())
     };
 
-    // YOUR FETCH CODE HERE
+    fetch(fetchUrl, fetchOptions)
+        .then(response => response.json())
+        .then(data => console.log(data));
 }
 
 function getUserData() {
@@ -31,24 +33,28 @@ function getUserName() {
 }
 
 function getEmail() {
-    // YOUR CODE HERE
+    const emailInput = document.querySelector('#email');
+    return emailInput.value;
 }
 
 function getFavouriteBand() {
-    // YOUR CODE HERE
+    const favouriteBandInput = document.getElementById('favouriteBand');
+    return favouriteBandInput.value;
 }
 
 function getFavouriteDish() {
-    // YOUR CODE HERE
+    const favouriteDishInput = document.getElementById('favouriteDish');
+    return favouriteDishInput.value;
 }
 
 function getSomethingAboutYou() {
-    // YOUR CODE HERE
+    const somethingAboutYouInput = document.getElementById('somethingAboutYou');
+    return somethingAboutYouInput.value;
 }
 
 // Use document.querySelector and addEventListener to select the form in the HTML (you can do it via the tag selector or via the id selector) and add a listener to the "submit" event with the eventHandler "createUser"
 
-// YOUR CODE HERE FOR EVENT HANDLING
+document.querySelector('#create-user-form').addEventListener('submit', createUser);
 
 // <---------End of user creation form code----------->
 
@@ -57,6 +63,11 @@ function getSomethingAboutYou() {
 function refreshUserList() {
     const fetchUrl = 'https://mscbt-luis-grande.herokuapp.com/session5/users';
 
+    fetch(fetchUrl)
+        .then(response => response.json())
+        .then(data => {
+            renderUserList(data);
+        });
     // YOUR FETCH CODE HERE
 }
 
@@ -144,11 +155,11 @@ function renderUserInfo(userData) {
 
 // Click the refresh user list button and see what happens. We will discus what's happened
 
-// Modify the function that renders the user list and add an event handler to each list element that when the elements gets clicked, executes the getUserInfo handler passing the user as a parameter of the function call
-
 // <--------- End of Part 2----------->
 
 // <---------Part 3----------->
+
+// Modify the function that renders the user list and add an event handler to each list element that when the elements gets clicked, executes the getUserInfo handler passing the user as a parameter of the function call
 
 // Fill in the code for getUserInfo function to use fetch to cal the "fetchUrl", extract the json from the response and render the info for that user
 
@@ -162,6 +173,11 @@ function renderUserInfo(userData) {
 
 // Feel free to join in groups to do the homework (Top 3/4 people). If that's the case, put the group members in the top of the file as a code comment
 // Please push a branch to the repo with your name/s as branch name with the solutions for homework
+// To create a new branch using git run the following command:
+// git checkout -b BRANCH_NAME
+// To push it to the repo using git, run the following command:
+// git push origin BRANCH_NAME
+// Branch names should not contain strange characters, so for example "git checkout -b Luis Grande" is invalid as branch name, run "git checkout -b luis_grande" for example
 
 // In Part 1, show a success notification when receiving the response from the server when creating a new user
 // Hint: there are already some functions implemented to show notifications (Check the bottom of the file)
