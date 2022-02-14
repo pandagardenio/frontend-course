@@ -1,3 +1,5 @@
+// Homework by Elena Borisova, Solomon Shiferaw, Julius von Davier
+
 // <---------User creation form code----------->
 
 function createUser(event) {
@@ -14,7 +16,17 @@ function createUser(event) {
 
     fetch(fetchUrl, fetchOptions)
         .then(response => response.json())
-        .then(data => console.log(data));
+        .then(data => {
+            console.log(data)
+            if ('errorMessage' in data) {
+                showErrorNotification(data.errorMessage)
+            }
+            else {
+                showUserCreatedNotification(data.userName)
+            }
+
+        })
+
 }
 
 function getUserData() {
@@ -52,7 +64,8 @@ function getSomethingAboutYou() {
     return somethingAboutYouInput.value;
 }
 
-// Use document.querySelector and addEventListener to select the form in the HTML (you can do it via the tag selector or via the id selector) and add a listener to the "submit" event with the eventHandler "createUser"
+// Use document.querySelector and addEventListener to select the form in the HTML
+// (you can do it via the tag selector or via the id selector) and add a listener to the "submit" event with the eventHandler "createUser"
 
 document.querySelector('#create-user-form').addEventListener('submit', createUser);
 
@@ -71,6 +84,8 @@ function refreshUserList() {
     // YOUR FETCH CODE HERE
 }
 
+// Modify the function that renders the user list and add an event handler to each list element that when the elements gets clicked,
+// executes the getUserInfo handler passing the user as a parameter of the function call
 function renderUserList(users) {
     // Select HTML element with id user-list
     const userList = document.querySelector('#user-list');
@@ -86,6 +101,7 @@ function renderUserList(users) {
         listElement.innerText = user.userName;
 
         // YOUR CODE FOR EVENT HANDLING HERE
+        listElement.addEventListener('click', () => getUserInfo(user.userName))
 
         // Append list element to userList element
         userList.appendChild(listElement);
@@ -96,40 +112,59 @@ document.getElementById('refresh-users-button').addEventListener('click', refres
 
 // <---------End of refresh user list code----------->
 
+
 // <---------Get user info code----------->
 
+// Fill in the code for getUserInfo function to use fetch to cal the "fetchUrl", extract the json from the response and
+// render the info for that user
 function getUserInfo(userName) {
     const fetchUrl = 'https://mscbt-luis-grande.herokuapp.com/session5/users/' + userName;
 
-    // YOUR FETCH CODE HERE
+    fetch(fetchUrl)
+        .then(response => response.json())
+        .then(data => {
+            console.log(data)
+            renderUserInfo(data)
+        })
+
 }
 
+
+// Fill in the code of renderUserInfo to actually render the info for the user we just fetched from the web server.
 function renderUserInfo(userData) {
     // Select HTML element with "userInfo" id
     // YOUR CODE HERE
+    const userInfo = document.querySelector('#userInfo');
 
     // Set innerHTML property of selected element to an empty string
     // YOUR CODE HERE
+    userInfo.innerHTML = '';
 
     // Loop over the userData object (Remember, you can use the for...in loop style we saw in session3)
     for (userKey in userData) {
         // Create an h3 element
         // YOUR CODE HERE
+        const listElement = document.createElement('h3');
 
-        // Set the innerText property of the h3 element to the key of the loop interation
+        // Set the innerText property of the h3 element to the key of the loop iteration
         // YOUR CODE HERE
+        listElement.innerText = userKey;
 
         // Create a p element
         // YOUR CODE HERE
+        const listElement1 = document.createElement('p');
 
         // Set the innerText property of the p element to the value of the loop iteration
         // YOUR CODE HERE
+        listElement1.innerText = userData[userKey];
 
         // Append the h3 element to the userInfo container
         // YOUR CODE HERE
+        userInfo.appendChild(listElement);
 
         // Append the p element to the userInfo container
         // YOUR CODE HERE
+        userInfo.appendChild(listElement1);
 
     }
 }
