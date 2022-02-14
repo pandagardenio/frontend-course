@@ -13,6 +13,9 @@ function createUser(event) {
     };
 
     // YOUR FETCH CODE HERE
+    fetch(fetchUrl, fetchOptions)
+        .then(response => response.json())
+        .then(data => console.log(data))
 }
 
 function getUserData() {
@@ -31,22 +34,32 @@ function getUserName() {
 }
 
 function getEmail() {
+    const emailInput = document.querySelector('#email');
+    return emailInput.value;
     // YOUR CODE HERE
 }
 
 function getFavouriteBand() {
+    const favouriteBandInput = document.getElementById('favouriteBand');
+    return favouriteBandInput.value;
     // YOUR CODE HERE
 }
 
 function getFavouriteDish() {
+    const favouriteDishInput = document.getElementById('favouriteDish');
+    return favouriteDishInput.value;
     // YOUR CODE HERE
 }
 
 function getSomethingAboutYou() {
+    const somethingAboutYouInput = document.getElementById('somethingAboutYou');
+    return somethingAboutYouInput.value;
     // YOUR CODE HERE
 }
 
 // Use document.querySelector and addEventListener to select the form in the HTML (you can do it via the tag selector or via the id selector) and add a listener to the "submit" event with the eventHandler "createUser"
+document.querySelector('#create-user-form').addEventListener('submit', createUser)
+
 
 // YOUR CODE HERE FOR EVENT HANDLING
 
@@ -56,7 +69,11 @@ function getSomethingAboutYou() {
 
 function refreshUserList() {
     const fetchUrl = 'https://mscbt-luis-grande.herokuapp.com/session5/users';
-
+    fetch(fetchUrl)
+        .then(response => response.json())
+        .then(data => {
+            renderUserList(data)
+        })    
     // YOUR FETCH CODE HERE
 }
 
