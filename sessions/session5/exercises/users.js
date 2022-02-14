@@ -1,5 +1,13 @@
 // <---------User creation form code----------->
 
+
+/*
+
+Elena Borisova
+Julius von Davier
+Solomon Shiferaw
+
+*/
 function createUser(event) {
     event.preventDefault();
 
@@ -14,7 +22,20 @@ function createUser(event) {
 
     fetch(fetchUrl, fetchOptions)
         .then(response => response.json())
-        .then(data => console.log(data));
+        .then(data => {
+            console.log(data)
+            if ('errorMessage' in data){
+                showErrorNotification(data.errorMessage)
+            }
+            else {
+                showUserCreatedNotification(data.userName);
+            }
+
+           
+
+            
+        });
+        
 }
 
 function getUserData() {
@@ -86,6 +107,9 @@ function renderUserList(users) {
         listElement.innerText = user.userName;
 
         // YOUR CODE FOR EVENT HANDLING HERE
+        listElement.addEventListener("click",()=>{
+            getUserInfo(user.userName)
+        })
 
         // Append list element to userList element
         userList.appendChild(listElement);
@@ -101,35 +125,50 @@ document.getElementById('refresh-users-button').addEventListener('click', refres
 function getUserInfo(userName) {
     const fetchUrl = 'https://mscbt-luis-grande.herokuapp.com/session5/users/' + userName;
 
-    // YOUR FETCH CODE HERE
+    fetch(fetchUrl)
+    .then(response => response.json())
+    .then(data => {
+        console.log(data)
+        renderUserInfo(data);
+    });
+
+
 }
 
 function renderUserInfo(userData) {
-    // Select HTML element with "userInfo" id
-    // YOUR CODE HERE
 
+
+    // Select HTML element with "userInfo" id
+    const userInfo = document.querySelector('#userInfo');
+ 
     // Set innerHTML property of selected element to an empty string
-    // YOUR CODE HERE
+   
+    userInfo.innerHTML = '';
 
     // Loop over the userData object (Remember, you can use the for...in loop style we saw in session3)
     for (userKey in userData) {
+        console.log(userKey)
+
         // Create an h3 element
-        // YOUR CODE HERE
+        const listElement = document.createElement('h3');
 
         // Set the innerText property of the h3 element to the key of the loop interation
-        // YOUR CODE HERE
+        listElement.innerText = userKey
+
 
         // Create a p element
-        // YOUR CODE HERE
+        const listElement1 = document.createElement('p');
+
 
         // Set the innerText property of the p element to the value of the loop iteration
-        // YOUR CODE HERE
+        listElement1.innerText = userData[userKey]
 
         // Append the h3 element to the userInfo container
-        // YOUR CODE HERE
+        userInfo.appendChild(listElement)
+        
 
         // Append the p element to the userInfo container
-        // YOUR CODE HERE
+        userInfo.appendChild(listElement1)
 
     }
 }
