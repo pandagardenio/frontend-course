@@ -2,25 +2,14 @@
 
 // add a handler to button 1 so it changes the background of the page when clicked
 
-<<<<<<< HEAD
 
-const button1 = document.querySelector("button1");
-const body = document.querySelector("body");
-
-const button1Handler = () => {
-    body.style.backgroundColor = "red";
-    console.log("hi");
-}
-
-button1.addEventListener("click", button1Handler)
-=======
 const button1 = document.querySelector('#button1');
 const button1Handler = () => {
     const body = document.querySelector('body');
     body.style.backgroundColor = 'black';
 }
 button1.addEventListener('click', button1Handler);
->>>>>>> 448269e9f5633b34101d8bf758b17e1fbcfd658c
+
 
 // add a handler to button 2 so it adds the text "dynamically created" to the <h1>
 const button2 = document.querySelector('#button2');

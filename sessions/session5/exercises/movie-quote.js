@@ -11,14 +11,11 @@ const apiUrl = 'https://movie-quote-api.herokuapp.com';
 
 fetch(apiUrl)
     .then(data => data.json())
-<<<<<<< HEAD
     .then(json => console.log(json.showSlugs))
 
 
 // YOUR CODE HERE
-=======
-    .then(json => console.log(json));
->>>>>>> 1dede38c4bf667d0df7fad404c9c15ba4ac216c6
+
 
 //---------------------//
 
@@ -36,7 +33,7 @@ fetch(apiUrl)
 // For each show slug in the "showSlugs" array from the response, create a "li" tag with class "show-slugs__list-item" and append it to the "ul" we have just created
 
 //---------------------//
-\
+
 const divContainer = document.querySelector('.show-slugs');
 
 const ulContainer = document.createElement("ul");
