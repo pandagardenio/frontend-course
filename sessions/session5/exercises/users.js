@@ -1,3 +1,5 @@
+// Group members: Kim, Elisabetta, Aakanksha, Jay
+
 // <---------User creation form code----------->
 
 function createUser(event) {
@@ -12,10 +14,9 @@ function createUser(event) {
         body: JSON.stringify(getUserData())
     };
 
-    // YOUR FETCH CODE HERE
     fetch(fetchUrl, fetchOptions)
         .then(response => response.json())
-        .then(data => console.log(data))
+        .then(data => console.log(data));
 }
 
 function getUserData() {
@@ -36,32 +37,26 @@ function getUserName() {
 function getEmail() {
     const emailInput = document.querySelector('#email');
     return emailInput.value;
-    // YOUR CODE HERE
 }
 
 function getFavouriteBand() {
     const favouriteBandInput = document.getElementById('favouriteBand');
     return favouriteBandInput.value;
-    // YOUR CODE HERE
 }
 
 function getFavouriteDish() {
     const favouriteDishInput = document.getElementById('favouriteDish');
     return favouriteDishInput.value;
-    // YOUR CODE HERE
 }
 
 function getSomethingAboutYou() {
     const somethingAboutYouInput = document.getElementById('somethingAboutYou');
     return somethingAboutYouInput.value;
-    // YOUR CODE HERE
 }
 
 // Use document.querySelector and addEventListener to select the form in the HTML (you can do it via the tag selector or via the id selector) and add a listener to the "submit" event with the eventHandler "createUser"
-document.querySelector('#create-user-form').addEventListener('submit', createUser)
 
-
-// YOUR CODE HERE FOR EVENT HANDLING
+document.querySelector('#create-user-form').addEventListener('submit', createUser);
 
 // <---------End of user creation form code----------->
 
@@ -69,12 +64,12 @@ document.querySelector('#create-user-form').addEventListener('submit', createUse
 
 function refreshUserList() {
     const fetchUrl = 'https://mscbt-luis-grande.herokuapp.com/session5/users';
+
     fetch(fetchUrl)
         .then(response => response.json())
         .then(data => {
-            renderUserList(data)
-        })    
-    // YOUR FETCH CODE HERE
+            renderUserList(data);
+        });
 }
 
 function renderUserList(users) {
@@ -92,7 +87,7 @@ function renderUserList(users) {
         listElement.innerText = user.userName;
 
         // YOUR CODE FOR EVENT HANDLING HERE
-
+        listElement.addEventListener('click', () => {getUserInfo(user.userName)})
         // Append list element to userList element
         userList.appendChild(listElement);
     });
@@ -107,34 +102,46 @@ document.getElementById('refresh-users-button').addEventListener('click', refres
 function getUserInfo(userName) {
     const fetchUrl = 'https://mscbt-luis-grande.herokuapp.com/session5/users/' + userName;
 
+    fetch(fetchUrl)
+        .then(response => response.json())
+        .then(userData => {
+            renderUserInfo(userData);
+        });
     // YOUR FETCH CODE HERE
 }
 
 function renderUserInfo(userData) {
     // Select HTML element with "userInfo" id
     // YOUR CODE HERE
-
+    const userInfo = document.getElementById('userInfo')
     // Set innerHTML property of selected element to an empty string
+    userInfo.innerHTML = '';
     // YOUR CODE HERE
 
     // Loop over the userData object (Remember, you can use the for...in loop style we saw in session3)
     for (userKey in userData) {
         // Create an h3 element
+        const infoElement = document.createElement('h3');
         // YOUR CODE HERE
 
-        // Set the innerText property of the h3 element to the key of the loop interation
+        // Set the innerText property of the h3 element to the key of the loop iteration
+        infoElement.innerText = userKey;
         // YOUR CODE HERE
 
         // Create a p element
+        const infoPElement = document.createElement('p');
         // YOUR CODE HERE
 
         // Set the innerText property of the p element to the value of the loop iteration
+        infoPElement.innerText = userData[userKey];
         // YOUR CODE HERE
 
         // Append the h3 element to the userInfo container
+        userInfo.appendChild(infoElement);
         // YOUR CODE HERE
 
         // Append the p element to the userInfo container
+        userInfo.appendChild(infoPElement);
         // YOUR CODE HERE
 
     }
@@ -161,11 +168,11 @@ function renderUserInfo(userData) {
 
 // Click the refresh user list button and see what happens. We will discus what's happened
 
-// Modify the function that renders the user list and add an event handler to each list element that when the elements gets clicked, executes the getUserInfo handler passing the user as a parameter of the function call
-
 // <--------- End of Part 2----------->
 
 // <---------Part 3----------->
+
+// Modify the function that renders the user list and add an event handler to each list element that when the elements gets clicked, executes the getUserInfo handler passing the user as a parameter of the function call
 
 // Fill in the code for getUserInfo function to use fetch to cal the "fetchUrl", extract the json from the response and render the info for that user
 
@@ -179,6 +186,11 @@ function renderUserInfo(userData) {
 
 // Feel free to join in groups to do the homework (Top 3/4 people). If that's the case, put the group members in the top of the file as a code comment
 // Please push a branch to the repo with your name/s as branch name with the solutions for homework
+// To create a new branch using git run the following command:
+// git checkout -b BRANCH_NAME
+// To push it to the repo using git, run the following command:
+// git push origin BRANCH_NAME
+// Branch names should not contain strange characters, so for example "git checkout -b Luis Grande" is invalid as branch name, run "git checkout -b luis_grande" for example
 
 // In Part 1, show a success notification when receiving the response from the server when creating a new user
 // Hint: there are already some functions implemented to show notifications (Check the bottom of the file)
