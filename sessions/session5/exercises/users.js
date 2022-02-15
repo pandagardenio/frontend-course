@@ -16,7 +16,13 @@ function createUser(event) {
 
     fetch(fetchUrl, fetchOptions)
         .then(response => response.json())
-        .then(data => console.log(data));
+        .then(data => {
+            if(data.errorMessage) {
+                showErrorNotification(data.errorMessage);
+            } else {
+                showUserCreatedNotification(data.userName);
+            }
+        });
 }
 
 function getUserData() {
@@ -57,7 +63,6 @@ function getSomethingAboutYou() {
 // Use document.querySelector and addEventListener to select the form in the HTML (you can do it via the tag selector or via the id selector) and add a listener to the "submit" event with the eventHandler "createUser"
 
 document.querySelector('#create-user-form').addEventListener('submit', createUser);
-
 // <---------End of user creation form code----------->
 
 // <---------Refresh user list code----------->
