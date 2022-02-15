@@ -1,5 +1,4 @@
-// const usersEndpoint = 'https://mscbt-luis-grande.herokuapp.com/session7/contacts'
-const usersEndpoint = 'http://localhost:3100/session7/contacts'
+const usersEndpoint = 'https://mscbt-luis-grande.herokuapp.com/session7/contacts'
 
 function getContacts() {
     return fetch(usersEndpoint)
