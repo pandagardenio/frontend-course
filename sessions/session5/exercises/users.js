@@ -1,145 +1,151 @@
 // <---------User creation form code----------->
 
+
+// team --> Andres, Ragnar, Drew
+
 function createUser(event) {
-    event.preventDefault();
+  event.preventDefault();
 
-    const fetchUrl = 'https://mscbt-luis-grande.herokuapp.com/session5/users';
-    const fetchOptions = {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(getUserData())
-    };
+  const fetchUrl = "https://mscbt-luis-grande.herokuapp.com/session5/users";
+  const fetchOptions = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(getUserData()),
+  };
 
-    fetch(fetchUrl, fetchOptions)
-        .then(response => response.json())
-        .then(data => console.log(data));
+  fetch(fetchUrl, fetchOptions)
+    .then((response) => response.json())
+    .then((data) => console.log(data));
 }
 
 function getUserData() {
-    return {
-        userName: getUserName(),
-        email: getEmail(),
-        favouriteBand: getFavouriteBand(),
-        favouriteDish: getFavouriteDish(),
-        somethingAboutYou: getSomethingAboutYou()
-    };
+  return {
+    userName: getUserName(),
+    email: getEmail(),
+    favouriteBand: getFavouriteBand(),
+    favouriteDish: getFavouriteDish(),
+    somethingAboutYou: getSomethingAboutYou(),
+  };
 }
 
 function getUserName() {
-    const userNameInput = document.querySelector('#userName');
-    return userNameInput.value;
+  const userNameInput = document.querySelector("#userName");
+  return userNameInput.value;
 }
 
 function getEmail() {
-    const emailInput = document.querySelector('#email');
-    return emailInput.value;
+  const emailInput = document.querySelector("#email");
+  return emailInput.value;
 }
 
 function getFavouriteBand() {
-    const favouriteBandInput = document.getElementById('favouriteBand');
-    return favouriteBandInput.value;
+  const favouriteBandInput = document.getElementById("favouriteBand");
+  return favouriteBandInput.value;
 }
 
 function getFavouriteDish() {
-    const favouriteDishInput = document.getElementById('favouriteDish');
-    return favouriteDishInput.value;
+  const favouriteDishInput = document.getElementById("favouriteDish");
+  return favouriteDishInput.value;
 }
 
 function getSomethingAboutYou() {
-    const somethingAboutYouInput = document.getElementById('somethingAboutYou');
-    return somethingAboutYouInput.value;
+  const somethingAboutYouInput = document.getElementById("somethingAboutYou");
+  return somethingAboutYouInput.value;
 }
 
 // Use document.querySelector and addEventListener to select the form in the HTML (you can do it via the tag selector or via the id selector) and add a listener to the "submit" event with the eventHandler "createUser"
 
-document.querySelector('#create-user-form').addEventListener('submit', createUser);
+document
+  .querySelector("#create-user-form")
+  .addEventListener("submit", createUser);
 
 // <---------End of user creation form code----------->
 
 // <---------Refresh user list code----------->
 
 function refreshUserList() {
-    const fetchUrl = 'https://mscbt-luis-grande.herokuapp.com/session5/users';
+  const fetchUrl = "https://mscbt-luis-grande.herokuapp.com/session5/users";
 
-    fetch(fetchUrl)
-        .then(response => response.json())
-        .then(data => {
-            renderUserList(data);
-        });
-    // YOUR FETCH CODE HERE
+  fetch(fetchUrl)
+    .then((result) => result.json())
+    .then((output) => {
+      renderUserList(output);
+    });
+  // YOUR FETCH CODE HERE
 }
 
 function renderUserList(users) {
-    // Select HTML element with id user-list
-    const userList = document.querySelector('#user-list');
-    // Remove everything in the user-list container
-    userList.innerHTML = '';
-    // For each user, execute code
-    users.forEach(user => {
-        // Create "li" tag
-        const listElement = document.createElement('li');
-        // Add classes for styling
-        listElement.classList.add('users__list-item');
-        // Add text list element
-        listElement.innerText = user.userName;
+  // Select HTML element with id user-list
+  const userList = document.querySelector("#user-list");
+  // Remove everything in the user-list container
+  userList.innerHTML = "";
+  // For each user, execute code
+  users.forEach((user) => {
+    // Create "li" tag
+    const listElement = document.createElement("li");
+    // Add classes for styling
+    listElement.classList.add("users__list-item");
+    // Add text list element
+    listElement.innerText = user.userName;
 
-        // YOUR CODE FOR EVENT HANDLING HERE
-
-        // Append list element to userList element
-        userList.appendChild(listElement);
-    });
+    // YOUR CODE FOR EVENT HANDLING HERE
+    listElement.addEventListener("click", () => getUserInfo(user.userName));
+    // Append list element to userList element
+    userList.appendChild(listElement);
+  });
 }
 
-document.getElementById('refresh-users-button').addEventListener('click', refreshUserList);
+document
+  .getElementById("refresh-users-button")
+  .addEventListener("click", refreshUserList);
 
 // <---------End of refresh user list code----------->
 
 // <---------Get user info code----------->
 
 function getUserInfo(userName) {
-    const fetchUrl = 'https://mscbt-luis-grande.herokuapp.com/session5/users/' + userName;
-
-    // YOUR FETCH CODE HERE
+  const fetchUrl =
+    "https://mscbt-luis-grande.herokuapp.com/session5/users/" + userName;
+  fetch(fetchUrl)
+    .then((result) => result.json())
+    .then((output) => {
+      renderUserInfo(output);
+    });
 }
+// YOUR FETCH CODE HERE
 
 function renderUserInfo(userData) {
-    // Select HTML element with "userInfo" id
-    // YOUR CODE HERE
+  // Select HTML element with "userInfo" id
+  const userInfo = document.getElementById("userInfo");
 
-    // Set innerHTML property of selected element to an empty string
-    // YOUR CODE HERE
+  // Set innerHTML property of selected element to an empty string
+  userInfo.innerHTML = "";
 
-    // Loop over the userData object (Remember, you can use the for...in loop style we saw in session3)
-    for (userKey in userData) {
-        // Create an h3 element
-        // YOUR CODE HERE
-
-        // Set the innerText property of the h3 element to the key of the loop interation
-        // YOUR CODE HERE
-
-        // Create a p element
-        // YOUR CODE HERE
-
-        // Set the innerText property of the p element to the value of the loop iteration
-        // YOUR CODE HERE
-
-        // Append the h3 element to the userInfo container
-        // YOUR CODE HERE
-
-        // Append the p element to the userInfo container
-        // YOUR CODE HERE
-
-    }
+  // Loop over the userData object (Remember, you can use the for...in loop style we saw in session3)
+  for (userKey in userData) {
+    // Create an h3 element
+    const heading3Element = document.createElement("h3");
+    // Set the innerText property of the h3 element to the key of the loop interation
+    heading3Element.innerText = userKey;
+    // Create a p element
+    const paragraphElement = document.createElement("p");
+    // Set the innerText property of the p element to the value of the loop iteration
+    paragraphElement.innerText = userData[userKey];
+    // Append the h3 element to the userInfo container
+    userInfo.append(heading3Element);
+    // Append the p element to the userInfo container
+    userInfo.append(paragraphElement);
+  }
 }
 
 // <---------End of get user info code----------->
 
-
 // <---------Part 1----------->
 
-// Fill in the code for getEmail, getFavouriteBand, getFavouriteDish and getSomethingAboutYou functions to get the values of the inputs in the form (you can use getUserName as an example)
+// Fill in the code for getEmail, getFavouriteBand, getFavouriteDish
+// and getSomethingAboutYou functions to get the values of the inputs in the form (you can use getUserName as an example)
 
 // Fill in the code for createUser function to use fetch to call the "fetchUrl" with the provided "fetchOptions".
 
@@ -194,42 +200,42 @@ function renderUserInfo(userData) {
 
 // <---------Notification code----------->
 function showUserCreatedNotification(userName) {
-    showNotification('success', userName + ' user created');
+  showNotification("success", userName + " user created");
 }
 
 function showErrorNotification(message) {
-    showNotification('error', message);
+  showNotification("error", message);
 }
 
 function showNotification(type, content) {
-    // Create a div tag for the container of the notification
-    const notificationContainer = document.createElement('div');
-    // Add classes to the notification container
-    notificationContainer.classList.add('notification');
-    if (type === 'success') {
-        notificationContainer.classList.add('notification--success');
-    }
-    if (type === 'error') {
-        notificationContainer.classList.add('notification--error');
-    }
-    // Create a p tag for the content for the notification
-    const notificationContent = document.createElement('p');
-    // Add classes to the notification content
-    notificationContent.classList.add('notification__content');
-    // Add text to the notification content
-    notificationContent.innerText = content;
-    // Append the p tag representing the content to the div tag representing the container
-    notificationContainer.appendChild(notificationContent);
-    // Append the notification element to the body tag
-    document.querySelector('body').appendChild(notificationContainer);
-    // Add visible class after 100ms to allow notification animation
-    setTimeout(() => {
-        notificationContainer.classList.add('notification--visible');
-    }, 100);
-    // Remove visible class after 5000ms to allow notification animation
-    setTimeout(() => {
-        notificationContainer.classList.remove('notification--visible');
-    }, 5000);
+  // Create a div tag for the container of the notification
+  const notificationContainer = document.createElement("div");
+  // Add classes to the notification container
+  notificationContainer.classList.add("notification");
+  if (type === "success") {
+    notificationContainer.classList.add("notification--success");
+  }
+  if (type === "error") {
+    notificationContainer.classList.add("notification--error");
+  }
+  // Create a p tag for the content for the notification
+  const notificationContent = document.createElement("p");
+  // Add classes to the notification content
+  notificationContent.classList.add("notification__content");
+  // Add text to the notification content
+  notificationContent.innerText = content;
+  // Append the p tag representing the content to the div tag representing the container
+  notificationContainer.appendChild(notificationContent);
+  // Append the notification element to the body tag
+  document.querySelector("body").appendChild(notificationContainer);
+  // Add visible class after 100ms to allow notification animation
+  setTimeout(() => {
+    notificationContainer.classList.add("notification--visible");
+  }, 100);
+  // Remove visible class after 5000ms to allow notification animation
+  setTimeout(() => {
+    notificationContainer.classList.remove("notification--visible");
+  }, 5000);
 }
 
 // <---------End of notification code----------->
