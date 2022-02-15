@@ -70,7 +70,7 @@ function refreshUserList() {
 
     fetch(fetchUrl)
         .then(response => response.json())
-        .then(data => { renderUserList(data) });
+        .then(data => { renderUserList(data); });
 
     // YOUR FETCH CODE HERE
 }
@@ -104,21 +104,20 @@ document.getElementById('refresh-users-button').addEventListener('click', refres
 // <---------Get user info code----------->
 
 function getUserInfo(userName) {
-    const fetchUrl = 'https://mscbt-luis-grande.herokuapp.com/session5/users' + userName;
+    const fetchUrl = 'https://mscbt-luis-grande.herokuapp.com/session5/users/' + userName;
 
     fetch(fetchUrl)
         .then(response => response.json())
         .then(data => {
             console.log(data)
-            renderUserList(data)
+            renderUserInfo(data)
         });
 
-    // YOUR FETCH CODE HERE
 }
 
 function renderUserInfo(userData) {
     // Select HTML element with "userInfo" id
-    const userInfo = document.getElementById("userInfo")
+    const userInfo = document.getElementById('userInfo');
 
     // Set innerHTML property of selected element to an empty string
     userInfo.innerHTML = '';
