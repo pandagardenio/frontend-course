@@ -138,7 +138,7 @@ function renderUserInfo(userData) {
 
         // Set the innerText property of the p element to the value of the loop iteration
 
-        infoElementP.innerText = userData[userKey];
+        userInfoElementP.innerText = userData[userKey];
 
         // Append the h3 element to the userInfo container
 
