@@ -1,3 +1,5 @@
+// homework by Coco Koban (cococokoko), Ishia Calinisan (ishiacalinisan), Hanna Horst (horsthanna) and Philippe Henderson
+
 // <---------User creation form code----------->
 
 function createUser(event) {
@@ -54,7 +56,9 @@ function getSomethingAboutYou() {
 
 // Use document.querySelector and addEventListener to select the form in the HTML (you can do it via the tag selector or via the id selector) and add a listener to the "submit" event with the eventHandler "createUser"
 
+// EVENT HANDLING
 document.querySelector('#create-user-form').addEventListener('submit', createUser);
+
 
 // <---------End of user creation form code----------->
 
@@ -63,11 +67,11 @@ document.querySelector('#create-user-form').addEventListener('submit', createUse
 function refreshUserList() {
     const fetchUrl = 'https://mscbt-luis-grande.herokuapp.com/session5/users';
 
+
     fetch(fetchUrl)
         .then(response => response.json())
-        .then(data => {
-            renderUserList(data);
-        });
+        .then(data => { renderUserList(data) });
+
     // YOUR FETCH CODE HERE
 }
 
@@ -86,6 +90,7 @@ function renderUserList(users) {
         listElement.innerText = user.userName;
 
         // YOUR CODE FOR EVENT HANDLING HERE
+        listElement.addEventListener('click', () => { getUserInfo(user.userName) })
 
         // Append list element to userList element
         userList.appendChild(listElement);
@@ -99,37 +104,44 @@ document.getElementById('refresh-users-button').addEventListener('click', refres
 // <---------Get user info code----------->
 
 function getUserInfo(userName) {
-    const fetchUrl = 'https://mscbt-luis-grande.herokuapp.com/session5/users/' + userName;
+    const fetchUrl = 'https://mscbt-luis-grande.herokuapp.com/session5/users' + userName;
+
+    fetch(fetchUrl)
+        .then(response => response.json())
+        .then(data => {
+            console.log(data)
+            renderUserList(data)
+        });
 
     // YOUR FETCH CODE HERE
 }
 
 function renderUserInfo(userData) {
     // Select HTML element with "userInfo" id
-    // YOUR CODE HERE
+    const userInfo = document.getElementById("userInfo")
 
     // Set innerHTML property of selected element to an empty string
-    // YOUR CODE HERE
+    userInfo.innerHTML = '';
 
     // Loop over the userData object (Remember, you can use the for...in loop style we saw in session3)
     for (userKey in userData) {
         // Create an h3 element
-        // YOUR CODE HERE
+        const h3_element = document.createElement('h3');
 
         // Set the innerText property of the h3 element to the key of the loop interation
-        // YOUR CODE HERE
+        h3_element.innerText = userKey;
 
         // Create a p element
-        // YOUR CODE HERE
+        const p_element = document.createElement('p');
 
         // Set the innerText property of the p element to the value of the loop iteration
-        // YOUR CODE HERE
+        p_element.innerText = userData[userKey];
 
         // Append the h3 element to the userInfo container
-        // YOUR CODE HERE
+        userInfo.appendChild(h3_element);
 
         // Append the p element to the userInfo container
-        // YOUR CODE HERE
+        userInfo.appendChild(p_element);
 
     }
 }
@@ -155,12 +167,11 @@ function renderUserInfo(userData) {
 
 // Click the refresh user list button and see what happens. We will discus what's happened
 
+// Modify the function that renders the user list and add an event handler to each list element that when the elements gets clicked, executes the getUserInfo handler passing the user as a parameter of the function call
+
 // <--------- End of Part 2----------->
 
 // <---------Part 3----------->
-
-// Modify the function that renders the user list and add an event handler to each list element that when the elements gets clicked, executes the getUserInfo handler passing the user as a parameter of the function call
-
 // Fill in the code for getUserInfo function to use fetch to cal the "fetchUrl", extract the json from the response and render the info for that user
 
 // Fill in the code of renderUserInfo to actually render the info for the user we just fetched from the web server.
