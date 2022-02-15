@@ -1,3 +1,5 @@
+// Team: Poche, Yasmine, Joe
+
 // <---------User creation form code----------->
 
 function createUser(event) {
@@ -112,38 +114,38 @@ function getUserInfo(userName) {
 
 function renderUserInfo(userData) {
     // Select HTML element with "userInfo" id
-    // YOUR CODE HERE
+
     const userInfo = document.getElementById('userInfo')
 
     // Set innerHTML property of selected element to an empty string
+
     userInfo.innerHTML = '';
-    // YOUR CODE HERE
 
     // Loop over the userData object (Remember, you can use the for...in loop style we saw in session3)
     for (userKey in userData) {
         // Create an h3 element
-        // YOUR CODE HERE
+
         const userInfoElement = document.createElement('h3');
 
 
         // Set the innerText property of the h3 element to the key of the loop interation
-        // YOUR CODE HERE
+
         userInfoElement.innerText = userKey;
 
         // Create a p element
-        // YOUR CODE HERE
+
         const userInfoElementP = document.createElement('p');
 
         // Set the innerText property of the p element to the value of the loop iteration
-        // YOUR CODE HERE
+
         infoElementP.innerText = userData[userKey];
 
         // Append the h3 element to the userInfo container
-        // YOUR CODE HERE
+
          userInfo.appendChild(userInfoElement);
 
         // Append the p element to the userInfo container
-        // YOUR CODE HERE
+
         userInfo.appendChild(userInfoElementP);
 
     }
