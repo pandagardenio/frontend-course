@@ -347,3 +347,8 @@ We will use this as a cheatsheet reference for flex [flexbox cheatsheet](https:/
 
 
 Examples in `flex.html`.
+
+# Practice "Homework"
+
+Go to the following link [Flexbox Froggy](https://flexboxfroggy.com) and do some practice on flexbox.
+Use our cheetsheet in case you have doubts about some properties [flexbox cheatsheet](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
