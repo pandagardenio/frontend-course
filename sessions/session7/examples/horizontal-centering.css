@@ -1,0 +1,26 @@
+.centered--fixed-width {
+    /* This is a shorthand for margin
+    It's the same as writing
+    margin-top: 32px;
+    margin-bottom: 32px;
+    margin-left: auto;
+    margin-right: auto; */
+    margin: 32px auto;
+    padding: 32px;
+    width: 1024px;
+    background-color: yellow;
+}
+
+.centered--fluid-width {
+    /* This is a shorthand for margin
+    It's the same as writing
+    margin-top: 32px;
+    margin-bottom: 32px;
+    margin-left: auto;
+    margin-right: auto; */
+    margin: 32px auto;
+    padding: 32px;
+    max-width: 1024px;
+    min-width: 248px;
+    background-color: yellow;
+}

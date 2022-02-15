@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="./display.css">
+    </head>
+    <body>
+        <div class="container-block--default">
+            As you already know, <strong>divs</strong> are the block elements by default.
+        </div>
+        <div class="container-block--default">
+            As we can see, when an element has <strong>display: block;</strong> elements do not start a new line.
+        </div>
+        <div class="container-block--default container-block--box-properties">
+            As we can see, when an element has <strong>display: block;</strong> margins, padding, width and height are correctly applied.
+        </div>
+        <span class="container-block container-block--default container-block--box-properties">
+            As you already know, we can assign <strong>display: block;</strong> to any element. In this case to a <strong>span</strong>.
+        </span>
+        <div class="container-block--default">
+            <span class="container-inline--default">
+                As you already know, <strong>spans</strong> are inline elements by default.
+            </span>
+            <span class="container-inline--default">
+                As we can seee, when an element has <strong>display: inline;</strong> it does not start a new line.
+            </span>
+            <span class="container-inline--default">
+                As we can see, when an element has <strong>display: inline;</strong> margins are correctly applied, but padding is applied in an incorrect way and widht and height is completely ignored.
+            </span>
+        </div>
+        <p>
+            As we can see here, elements with <strong>display: inline;</strong> is very useful to <span class="green-text">give styles</span> inside <span class="red-text">text for example</span>.
+        </p>
+        <div class="container-block--default">
+            <span class="container-inline-block">
+                However, when we apply <strong>display: inline-block;</strong> we can see that margins, padding, width and height are correctly applied.
+            </span>
+            <span class="container-inline-block">
+                As we can seee, when an element has <strong>display: inline-block</strong> it does not start a new line.
+            </span>
+        </div>
+    </body>
+</html>

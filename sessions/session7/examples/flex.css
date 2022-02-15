@@ -1,0 +1,47 @@
+* {
+    box-sizing: border-box;
+}
+
+code {
+    padding: 32px;
+    background-color: lightgray;
+    display: block;
+}
+
+.flex--basic {
+    display: flex;
+}
+
+.flex--wrap {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.square {
+    margin: 32px;
+    width: 100px;
+    height: 100px;
+    background-color: green;
+    border: 1px solid black;
+}
+
+.layout-1 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.layout-1__content {
+    padding: 32px;
+    width: calc(100% - 282px);
+}
+
+.layout-1__sidebar {
+    width: 250px;
+    margin-left: 32px;
+    padding: 32px;
+}
+
+.layout-1__footer {
+    width: 100%;
+    padding: 32px;
+}

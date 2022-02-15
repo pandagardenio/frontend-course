@@ -1,0 +1,44 @@
+[
+    {
+        "userName": "Luis Grande",
+        "email": "l.grande@faculty.ie.edu",
+        "favouriteBand": "Radiohead",
+        "favouriteDish": "Pizza",
+        "somethingAboutYou": "I love cooking"
+    },
+    {
+        "userName": "Antonio Martínez",
+        "email": "a.martinez@faculty.ie.edu",
+        "favouriteBand": "Wilco",
+        "favouriteDish": "Pasta",
+        "somethingAboutYou": "I love travelling"
+    },
+    {
+        "userName": "Sara García",
+        "email": "s.garcia@faculty.ie.edu",
+        "favouriteBand": "Arcade Fire",
+        "favouriteDish": "Cheese",
+        "somethingAboutYou": "I love playing tennis"
+    },
+    {
+        "userName": "Marta Astrain",
+        "email": "m.astrain@faculty.ie.edu",
+        "favouriteBand": "Daft Punk",
+        "favouriteDish": "Paella",
+        "somethingAboutYou": "I love playing footbal"
+    },
+    {
+        "userName": "Mathilde Carrasco",
+        "email": "m.carrasco@faculty.ie.edu",
+        "favouriteBand": "Aretha Franklink",
+        "favouriteDish": "Fried Chicken",
+        "somethingAboutYou": "I love sailing"
+    },
+    {
+        "userName": "Luis Grande",
+        "email": "l.grande@faculty.ie.edu",
+        "favouriteBand": "Radiohead",
+        "favouriteDish": "Pizza",
+        "somethingAboutYou": "I love cooking"
+    }
+]

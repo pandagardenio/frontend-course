@@ -1,0 +1,123 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="./flex.css" type="text/css" media="screen" />
+    </head>
+    <body>
+        <main>
+            <div>
+                <code>
+                    .flex--basic {
+                        display: flex;
+                    }
+                </code>
+                <p>
+                    As we can see, when we add display flex to a container, their children are laid out following the main axis (x-axis by default) even if they have display block.
+                </p>
+                <p>
+                    Only with <strong>display: flex;</strong>, children elements get squeezed in case their total width is bigger than their parent's container width.
+                </p>
+            </div>
+            <div class="flex--basic">
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+            </div>
+            <div class="flex--basic">
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+            </div>
+            <div>
+                <code>
+                    .flex--wrap {
+                        display: flex;
+                        flex-wrap: wrap;
+                    }
+                </code>
+                <p>
+                    Adding the <strong>flex-wrap: wrap;</strong> property to the container, we tell CSS to put wrap the line in case children total width is bigger than their parent's container width.
+                </p>
+            </div>
+            <div class="flex--wrap">
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+            </div>
+            <div>
+                <p>
+                    <strong>flexbox allows us to make layouts in a very easy way.</strong>
+                </p>
+            </div>
+            <div class="layout-1">
+                <div class="layout-1__content">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi elit augue, tincidunt sed enim vitae, euismod vulputate urna. Nunc ex nulla, aliquam et mollis at, consectetur non dolor. Vestibulum consequat, dui sed hendrerit dignissim, lectus diam molestie quam, ut fringilla enim tortor non ligula. Ut tincidunt pellentesque neque, sed maximus lectus auctor sit amet. Mauris in turpis mollis, dapibus turpis id, dapibus quam. Curabitur nisl nibh, finibus sed dolor vel, consectetur venenatis massa. In hac habitasse platea dictumst. Donec dignissim accumsan elit, et consectetur libero dictum eu. Pellentesque auctor ac dolor nec tincidunt. Curabitur fringilla, magna at pretium aliquam, tellus justo bibendum magna, nec fermentum libero lacus quis magna. Cras nec scelerisque sapien, at venenatis lorem.</p>
+                    <p>Nam ultricies dictum arcu, ut posuere justo. Donec sit amet dignissim urna. Proin eleifend urna ligula. Etiam lobortis volutpat mattis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum placerat fringilla ultrices. Aliquam sodales, tellus sed varius ultricies, nibh lacus placerat diam, sit amet bibendum nunc quam a est. Praesent et orci suscipit ipsum finibus convallis ut ac erat. Curabitur ligula augue, ullamcorper ut auctor at, maximus a orci. Fusce commodo in ligula quis laoreet. Nunc non erat consectetur, pharetra mauris ut, vehicula massa. Nunc at posuere diam, id convallis nulla. Mauris placerat convallis condimentum. Vestibulum fringilla tortor lobortis molestie convallis. Mauris non sem dolor.</p>
+
+                    <p>Aliquam at eros tincidunt, maximus diam sed, rutrum ante. Aliquam augue libero, pellentesque in diam eu, dignissim rhoncus tellus. Cras nec laoreet sem, in vehicula turpis. Phasellus sit amet tortor tellus. Suspendisse lacinia est quam, non dapibus felis maximus id. Cras justo ex, placerat vitae enim non, aliquam sollicitudin sem. Quisque blandit euismod massa, eu sodales justo vehicula tincidunt. Aenean non elit vitae nunc aliquet viverra et nec eros. Proin ut mi et lacus dapibus pellentesque. Praesent eleifend finibus lacus. Praesent scelerisque aliquam urna eu blandit. Nulla facilisi.</p>
+
+                    <p>Curabitur id semper neque. Duis at malesuada lectus. Donec lobortis convallis euismod. Cras aliquam neque sed felis molestie, et aliquet quam facilisis. Donec id diam posuere, bibendum odio ut, interdum mauris. Nam nulla ipsum, vestibulum sed mi quis, venenatis vulputate velit. Etiam aliquam sodales nisi, eu condimentum lorem tincidunt ut.</p>
+
+                    <p>Suspendisse tristique finibus urna, id viverra justo lobortis eu. Nunc convallis mollis urna, et accumsan ex feugiat vel. Nullam pharetra turpis sed risus tristique interdum. Aliquam scelerisque mauris sit amet velit scelerisque, sit amet sollicitudin felis dignissim. Sed non ante quis dolor efficitur condimentum. Cras commodo commodo felis quis gravida. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. In metus magna, tempus in sagittis id, scelerisque gravida justo. Integer blandit quis tortor nec iaculis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur et dictum mauris.</p>
+
+                    <p>Quisque nulla augue, fermentum ut molestie et, fermentum quis dui. Curabitur non justo dignissim turpis dapibus pretium in bibendum lorem. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque placerat eros a tellus molestie, quis ultrices odio sodales. Suspendisse pellentesque nibh nec metus scelerisque volutpat. Mauris ultrices massa a libero fermentum luctus. Vestibulum fringilla ac urna egestas varius. Aenean odio eros, ornare ut mauris mollis, aliquet tincidunt urna.</p>
+
+                    <p>Cras aliquet elit non dolor tincidunt, ut interdum enim suscipit. Proin blandit, massa sed porta sollicitudin, ex massa maximus purus, nec tincidunt quam purus eu nunc. Cras malesuada accumsan felis et blandit. Duis tempus, purus ut laoreet porttitor, metus libero ultricies nulla, et malesuada lectus turpis vel mi. Morbi ultrices rutrum libero, ac malesuada neque aliquet eget. Nullam ut bibendum turpis. Mauris sed efficitur magna. Morbi eget dolor sapien. Nulla malesuada purus non risus viverra, eu volutpat felis commodo. Donec mollis turpis orci, vel dapibus nunc tempus eget. Praesent mattis posuere tellus nec eleifend. Morbi id iaculis enim. Mauris non pharetra mauris. Aliquam nec elit aliquam, pulvinar augue vitae, consectetur enim.</p>
+
+                    <p>Aliquam tincidunt pellentesque erat nec luctus. Morbi sollicitudin interdum urna, id pulvinar nunc auctor ut. Morbi eget odio nec eros sagittis pharetra. Donec interdum sollicitudin nisl, in rhoncus tellus porttitor et. Aliquam erat volutpat. Donec congue orci ac lacinia convallis. Morbi in suscipit nisi. Maecenas condimentum eros nec cursus euismod. Aenean id dapibus sem. Phasellus est risus, gravida sed rhoncus sit amet, mollis vitae odio.</p>
+
+                    <p>Cras sollicitudin lacinia lorem, at vestibulum neque condimentum sed. Aliquam dapibus, libero ut iaculis finibus, dolor ligula elementum urna, et dignissim metus neque at nulla. Nulla vestibulum mattis tincidunt. Maecenas aliquam mauris sit amet lacus semper tincidunt nec nec urna. Integer nisi augue, scelerisque et blandit sed, elementum in quam. Donec malesuada lectus et ornare lacinia. Vivamus hendrerit orci sed rhoncus egestas. Integer gravida aliquet tincidunt. Nam pharetra est nec turpis eleifend consequat. Praesent in erat in ligula fringilla luctus et in lorem.</p>
+
+                    <p>Praesent tristique metus ullamcorper rhoncus viverra. Cras pharetra tortor id mollis placerat. Mauris ut dolor vulputate, iaculis ligula in, aliquet leo. Nullam sagittis lectus condimentum nunc lobortis rhoncus. Pellentesque auctor massa pharetra libero congue faucibus. Cras id magna elit. Nunc vitae est et enim dignissim interdum ac ut lacus. Aliquam sed faucibus mauris, eu consectetur tortor. Suspendisse congue ligula sem, nec laoreet quam egestas quis. In at orci ornare, aliquam risus ac, ultricies velit. Aenean eget vestibulum lacus, at pretium ex. Quisque sem dui, pulvinar ut mi non, auctor facilisis justo. Curabitur maximus, augue quis auctor sodales, eros ex efficitur turpis, nec auctor elit sem id mi. Suspendisse vel malesuada nisi.</p>
+
+                    <p>Nunc luctus mi ac orci condimentum dignissim. Pellentesque sed lacus vitae ante ultricies gravida. Praesent quam mi, lobortis sit amet placerat nec, finibus sit amet risus. Suspendisse malesuada quam est, blandit varius turpis commodo cursus. Nunc faucibus, lectus nec mollis tincidunt, massa turpis maximus ligula, vestibulum dictum eros mauris eu purus. Morbi id arcu mauris. In tempus quam mauris. Aliquam diam eros, interdum quis sagittis eu, suscipit eu quam. Duis nec tortor nunc. Curabitur imperdiet augue at mauris ornare, eu aliquet ex aliquam. Nullam a augue eu lacus posuere rhoncus. Sed mauris tellus, facilisis id pellentesque ac, interdum ut quam. Morbi auctor egestas turpis, vel dignissim sem consectetur ac. Donec odio mauris, maximus vitae lobortis ac, finibus ut elit.</p>
+
+                    <p>Mauris tincidunt pulvinar mauris, et tristique orci iaculis suscipit. Proin ut odio eu orci laoreet porta. Vivamus sit amet facilisis elit. Maecenas ac ornare libero, sit amet venenatis orci. Cras non tempor ipsum, non scelerisque lectus. Nulla eget commodo odio. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla facilisi. Donec in orci luctus nibh pharetra sodales. Nulla facilisi.</p>
+
+                    <p>Phasellus commodo auctor urna, id luctus velit vehicula id. In pharetra tellus vel urna aliquet dictum. Maecenas mattis leo vel dictum volutpat. Sed scelerisque sollicitudin gravida. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec et leo vitae enim aliquam porta malesuada ac velit. Proin nisl erat, fermentum eget feugiat sed, volutpat at eros. Ut id ultrices eros. Cras ante mi, elementum in lectus sed, ornare lobortis nunc.</p>
+
+                    <p>Nulla a lectus non felis viverra sollicitudin. Morbi congue vel leo elementum accumsan. Duis aliquet tempus hendrerit. Curabitur consequat ex lectus, at sollicitudin metus commodo quis. Etiam volutpat justo nulla, viverra blandit mi pretium ac. In congue lobortis neque. Etiam accumsan magna sed mollis tempus. Suspendisse vel semper leo, commodo fringilla felis. Mauris tincidunt rutrum arcu, a lacinia lacus iaculis ac. Duis condimentum suscipit est eu egestas.</p>
+
+                    <p>Nullam dictum lorem ante, vitae sodales ipsum dictum eu. Duis nec vulputate dui. Donec aliquet facilisis urna sit amet cursus. Etiam dictum aliquam erat, a tincidunt nisl porttitor et. Praesent viverra dictum massa sed mattis. Etiam sem turpis, mattis eget dui at, molestie suscipit elit. Nulla interdum condimentum quam, eu lobortis velit fermentum ac.</p>
+                </div>
+                <div class="layout-1__sidebar">
+                    <ul>
+                        <li>home</li>
+                        <li>about</li>
+                        <li>careers</li>
+                        <li>contact</li>
+                    </ul>
+                </div>
+                <div class="layout-1__footer">
+                    This is the footer of the layout. Read our privacy policy, we use cookies.
+                </div>
+            </div>
+        </main>
+    </body>
+</html>

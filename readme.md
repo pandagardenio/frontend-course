@@ -4,7 +4,7 @@
 2. [Session 2 - CSS](./sessions/session2)
 3. [Session 3 and 4 - Javascript for the web](./sessions/session3)
 4. [Session 5 and 6 - Communicating with the server](./sessions/session5)
-
+5. [Session 7 - The box model](./sessions/session7)
 
 ## Useful Visual Studio Code extensions
 

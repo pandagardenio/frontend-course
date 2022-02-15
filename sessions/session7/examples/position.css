@@ -1,0 +1,26 @@
+.container {
+    position: relative;
+}
+.nav {
+    position: absolute;
+    right: 0px;
+    width: 200px;
+    border: 2px solid green;
+}
+.section {
+    margin-right: 200px;
+    border: 2px solid brown;
+}
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 70px;
+    background-color: white;
+    width: 100%;
+    border: 2px solid blue
+}
+body {
+    /*needed because of the footer */
+    margin-bottom: 120px;
+}
