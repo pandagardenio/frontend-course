@@ -1,0 +1,16 @@
+.button {
+    cursor: pointer;
+    padding: 8px 12px;
+    border-width: 1px;
+}
+
+.button--primary {
+    background-color: green;
+    border-color: green;
+    color: white;
+}
+
+.button--primary:hover {
+    background-color: darkgreen;
+    border-color: darkgreen;
+}

@@ -1,0 +1,22 @@
+.card {
+    box-shadow: 5px 5px 15px 5px #000000;
+    background-color: white;
+    max-width: 400px;
+    padding: 32px;
+}
+
+.card + .card {
+    margin-top: 32px;
+}
+
+.card__title {
+    color: red;
+    margin: 0;
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid black;
+}
+
+.card__content {
+    color: green;
+}
