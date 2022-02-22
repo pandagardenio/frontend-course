@@ -1,0 +1,20 @@
+.contact-list {
+    width: 250px;
+}
+
+.contact-list__items {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    padding: 32px;
+}
+
+.contact-list__item {
+    margin-bottom: 16px;
+    padding: 16px;
+    cursor: pointer;
+}
+
+.contact-list__item:hover {
+    background-color: aqua;
+}

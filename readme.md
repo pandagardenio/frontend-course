@@ -7,6 +7,7 @@
 5. [Session 7 - The box model](./sessions/session7)
 6. [Mid course recap](./sessions/recap)
 7. [Session 8 - Starting with React](./sessions/session8)
+7. [Session 9 - React Basics](./sessions/session9)
 ## Useful Visual Studio Code extensions
 
  - [Visual Studio IntelliCode](https://marketplace.visualstudio.com/items?itemName=VisualStudioExptTeam.vscodeintellicode)

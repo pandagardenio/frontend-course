@@ -1,0 +1,17 @@
+.contact-details {
+    padding: 32px;
+    position: relative;
+    margin-left: auto;
+}
+
+.contact-details__close {
+    position: absolute;
+    top: 32px;
+    right: 32px;
+    display: none;
+    cursor: pointer;
+}
+
+.contact-details__close--visible {
+    display: block;
+}
