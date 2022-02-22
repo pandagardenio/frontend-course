@@ -33,6 +33,11 @@ You have the exercises we have been doing in class and this weekend I will publi
 You have the exercises we have been doing in class and this weekend I will publish a series of exercises so you can practice
 
 
+## React
+
+### React tutorial app
+[Ract tutorial app](https://react-tutorial.app/) Small course in a similar way as CodeAcademy. First 67 sessions are free and cover everything (and more) of what we are learning during this course
+
 With this, we should consolidate everything we have learnt so far in the course. As always, if you have any doubt, please ask them in class or ping me in the Slack Channel.
 
 Happy coding!
