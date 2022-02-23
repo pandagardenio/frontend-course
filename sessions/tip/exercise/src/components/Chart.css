@@ -1,0 +1,11 @@
+.chart__container {
+    height: 350px;
+}
+
+.chart:not(:last-child) {
+    margin-bottom: 64px;
+}
+
+.MuiTypography-root.chart__title {
+    margin-bottom: 32px;
+}

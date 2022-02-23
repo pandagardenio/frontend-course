@@ -1,0 +1,12 @@
+.dashboard-content {
+    flex-grow: 1;
+    height: 100vh;
+    overflow: auto;
+    background-color: #f5f5f5;
+    padding-top: 64px;
+}
+
+.dashboard-content__container {
+    margin: 32px 0;
+    max-width: 1200px;
+}

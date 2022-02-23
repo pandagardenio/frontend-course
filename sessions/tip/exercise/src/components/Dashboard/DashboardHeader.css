@@ -1,0 +1,33 @@
+.MuiAppBar-root.dashboard-header {
+    position: absolute;
+    transition: width 195ms cubic-bezier(0.4, 0, 0.6, 1) 0ms, margin 195ms cubic-bezier(0.4, 0, 0.6, 1) 0ms;
+    z-index: 1201;
+}
+
+.MuiAppBar-root.dashboard-header--open {
+    margin-left: 240px;
+    width: calc(100% - 240px);
+    transition: width 225ms cubic-bezier(0.4, 0, 0.6, 1) 0ms, margin 225ms cubic-bezier(0.4, 0, 0.6, 1) 0ms;
+}
+
+.dashboard-header__toolbar {
+    padding-right: 24px;
+}
+
+.MuiIconButton-root.dashboard-header__menu-button {
+    margin-right: 36px;
+    color: inherit;
+}
+
+.dashboard-header--open .dashboard-header__menu-button {
+    display: none;
+}
+
+.dashboard-header__title {
+    flex-grow: 1;
+    color: inherit;
+}
+
+.MuiIconButton-root.dashboard-header__notification-button {
+    color: inherit;
+}

@@ -1,0 +1,30 @@
+[{
+    "id": "css",
+    "label": "css",
+    "value": 405,
+    "color": "hsl(181, 70%, 50%)"
+},
+{
+    "id": "haskell",
+    "label": "haskell",
+    "value": 11,
+    "color": "hsl(40, 70%, 50%)"
+},
+{
+    "id": "scala",
+    "label": "scala",
+    "value": 97,
+    "color": "hsl(149, 70%, 50%)"
+},
+{
+    "id": "go",
+    "label": "go",
+    "value": 205,
+    "color": "hsl(40, 70%, 50%)"
+},
+{
+    "id": "hack",
+    "label": "hack",
+    "value": 339,
+    "color": "hsl(127, 70%, 50%)"
+}]

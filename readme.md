@@ -9,6 +9,7 @@
 7. [Session 8 - Starting with React](./sessions/session8)
 8. [Session 9 - React Basics](./sessions/session9)
 9. [Group assignment](./sessions/assignment)
+10. [Term Integration Project](./sessions/tip)
 ## Useful Visual Studio Code extensions
 
  - [Visual Studio IntelliCode](https://marketplace.visualstudio.com/items?itemName=VisualStudioExptTeam.vscodeintellicode)
