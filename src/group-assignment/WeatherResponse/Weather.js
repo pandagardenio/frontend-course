@@ -9,7 +9,7 @@ class Weather {
             data.uvi,
             data.clouds,
             data.wind_speed,
-            data.weather[0].main.toLowerCase()
+            data.weather[0]
         );
     }
 
