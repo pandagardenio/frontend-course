@@ -3,10 +3,10 @@
 ## Assignment data
 
 ### Forming the groups
-This assignment is meant to be done in groups of 3-4 people
+This assignment is meant to be done in groups (use your regular work groups)
 
 ### Delivery
-Please fork the repo MISSING_REPO_URL and commit all the changes to the main branch in your repo's fork. When finished, send the link to the repo via Slack/email.
+I'm setting a GitHub Classroom, more info on this on Friday the 25th
 
 ### Due date
 Please submit your assignment by Thursday the 10th of March
@@ -42,28 +42,65 @@ In this field we have the timeZone name `name` and the timeZone offset `offset` 
 ##### current
 
 `time`: Date in miliseconds. You can use it in Javascript using new Date(time) to get a formatted date
+
 `temperature`: Temperature in Farenheit degrees
+
 `temperatureFeeling`: The "feels like" temperature is **a measurement of how hot or cold it really feels like outside** in Farenheit degrees
+
 `humidity`: Humidity %
+
 `uvi`: The UVI gives an **indication of the level of UV radiation and the potential danger of sun exposure**
+
 ![UV index](https://www.who.int/images/default-source/imported/radiation/uv-ultraviolet-index.jpg?sfvrsn=8cd288e_5)
+
+
 `cloudiness`: Cloudiness %
+
 `windSpeed`: Wind speed in m/s
+
 `summary`: Summary of the weather
+
 
 ##### hourly[]
 `time`: Date in miliseconds. You can use it in Javascript using new Date(time) to get a formatted date
+
 `temperature`: Temperature in Farenheit degrees
+
 `temperatureFeeling`: The "feels like" temperature is **a measurement of how hot or cold it really feels like outside** in Farenheit degrees
+
 `humidity`: Humidity %
+
 `uvi`: The UVI gives an **indication of the level of UV radiation and the potential danger of sun exposure**
+
 ![UV index](https://www.who.int/images/default-source/imported/radiation/uv-ultraviolet-index.jpg?sfvrsn=8cd288e_5)
+
+
 `cloudiness`: Cloudiness %
+
 `windSpeed`: Wind speed in m/s
+
 `summary`: Summary of the weather
 
+
 ##### daily[]
-TO BE EXPLAINED
+The data we receive is in the same format except for **temperature** and **temperatureFeeling** keys. Instead of a number with the degrees, we receive objetcs with the following form.
+
+```json
+"temperature": {
+	"day": 285.05,
+	"min": 280.6,
+	"max": 286.75,
+	"night": 282.95,
+	"eve": 285.71,
+	"morn": 280.6
+},
+"temperatureFeeling": {
+	"day": 283.76,
+	"night": 281.19,
+	"eve": 284.38,
+	"morn": 280.6
+}
+```
 
 ## Assignment grading
 The grade of the assignment is going to based in four different levels of complexity
@@ -72,12 +109,12 @@ The grade of the assignment is going to based in four different levels of comple
 We need to make an app that calls the endpoint to get the weather for a city we choose from the available ones using fetch and shows the user the current temperature, the "feels like" temperature and an image representing the summary of the weather
 
 ### Second level
-We are going to improve the app we made in the first level and instead of showing the temperature for the city we choose, we are going to give our user the ability to select the user.
-For that, we are going to call the endpoint to get the available cities, render a series of tabs that our user is going to be able to click and when one of those tabs are clicked we are going to show the same weather data we are showing in the first part for the selected city.
+We are going to improve the app we made in the first level and instead of showing the temperature for the city we choose, we are going to give our user the ability to select the city.
+For that, we are going to call the endpoint to get the available cities, render a series of tabs (our whatever method you think is best for the user, like a select for example) that our user is going to be able to click and when one of those tabs are clicked we are going to show the same weather data we are showing in the first part for the selected city.
 
 ### Third level
 
-We are going to improve the app we made in the second level and also show the weather information in an hourly format. For this, we can use the hourly field in the response we get from getting the weather for a city.
+We are going to improve the app we made in the second level and also show the weather information in an hourly format. For this, we can use the hourly field in the response we get from getting the weather for a city. We want to display the weather by hour for the rest of the day (if right now it's 18:15 we should be showing the current weather that we were showing in the other levels and the weather by hour for 19:00, 20:00, 21:00, 22:00, 23:00, 00:00)
 
 #### Fourth level
-TO BE EXPLAINED
+We are going to improve the app we made in the third level and also show the weather information in an daily format. For this, we can use the daily field in the response we get from getting the weather for a city. We want to display the weather by day for the following four days.
