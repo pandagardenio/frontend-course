@@ -1,5 +1,5 @@
 const express = require('express');
-const barChartData = require('./data/barChart.json');
+const barChartData = require('./data/BarChart.json');
 const calendarChartData = require('./data/CalendarChart.json');
 const pieChartData = require('./data/PieChart.json');
 const radarChartData = require('./data/RadarChart.json');
