@@ -43,9 +43,9 @@ In this field we have the timeZone name `name` and the timeZone offset `offset` 
 
 `time`: Date in miliseconds. You can use it in Javascript using new Date(time) to get a formatted date
 
-`temperature`: Temperature in Farenheit degrees
+`temperature`: Temperature in Kelvin degrees
 
-`temperatureFeeling`: The "feels like" temperature is **a measurement of how hot or cold it really feels like outside** in Farenheit degrees
+`temperatureFeeling`: The "feels like" temperature is **a measurement of how hot or cold it really feels like outside** in Kelvin degrees
 
 `humidity`: Humidity %
 
@@ -64,9 +64,9 @@ In this field we have the timeZone name `name` and the timeZone offset `offset` 
 ##### hourly[]
 `time`: Date in miliseconds. You can use it in Javascript using new Date(time) to get a formatted date
 
-`temperature`: Temperature in Farenheit degrees
+`temperature`: Temperature in Kelvin degrees
 
-`temperatureFeeling`: The "feels like" temperature is **a measurement of how hot or cold it really feels like outside** in Farenheit degrees
+`temperatureFeeling`: The "feels like" temperature is **a measurement of how hot or cold it really feels like outside** in Kelvin degrees
 
 `humidity`: Humidity %
 
