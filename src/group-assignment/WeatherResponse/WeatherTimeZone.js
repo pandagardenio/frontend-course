@@ -1,4 +1,8 @@
 class WeatherTimeZone {
+    static deserialize(data) {
+        return new WeatherTimeZone(data.name, data.offset);
+    }
+
     static createFromResponse(data) {
         return new WeatherTimeZone(data.timezone, data.timezone_offset);
     }

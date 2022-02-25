@@ -1,4 +1,8 @@
 class WeatherLocation {
+    static deserialize(data) {
+        return new WeatherLocation(data.lat, data.lng);
+    }
+
     static createFromResponse(data) {
         return new WeatherLocation(data.lat, data.lon);
     }

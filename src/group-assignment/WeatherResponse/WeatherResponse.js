@@ -3,6 +3,16 @@ const { WeatherLocation } = require("./WeatherLocation");
 const { WeatherTimeZone } = require("./WeatherTimeZone");
 
 class WeatherResponse {
+    static deserialize(data) {
+        return new WeatherResponse(
+            WeatherLocation.deserialize(data.location),
+            WeatherTimeZone.deserialize(data.timeZone),
+            Weather.deserialize(data.current),
+            data.hourly.map(Weather.deserialize),
+            data.daily.map(Weather.deserialize)
+        )
+    }
+
     static createFromResponse(data) {
         return new WeatherResponse(
             WeatherLocation.createFromResponse(data),

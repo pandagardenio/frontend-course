@@ -1,4 +1,18 @@
 class Weather {
+    static deserialize(data) {
+        return new Weather(
+            data.time,
+            data.temperature,
+            data.temperatureFeeling,
+            data.pressure,
+            data.humidity,
+            data.uvi,
+            data.cloudiness,
+            data.windSpeed,
+            data.summary
+        );
+    }
+
     static createFromResponse(data) {
         return new Weather(
             data.dt * 1000,
