@@ -6,7 +6,7 @@
 This assignment is meant to be done in groups (use your regular work groups)
 
 ### Delivery
-I'm setting a GitHub Classroom, more info on this on Friday the 25th
+Please join this GitHub classroom. https://classroom.github.com/classrooms/98690154-ie-web-programming-2022/assignments/weather-app-group-assignment
 
 ### Due date
 Please submit your assignment by Thursday the 10th of March
@@ -19,8 +19,7 @@ With this assignment we are going to practice everything we have learnt so far.
 We are going to do a weather app.
 
 ### Assignment bootstrap app
-You will be provided with the skeleton of a React app, with some already done components that you are going to be able to use.
-TO BE EXPLAINED THE DIFFERENT COMPONENTS
+You will be provided with the skeleton of a React app, with some already done utilities. You have a description of them in the App.js file, explaining what they day and how to use them.
 
 ### Assignment weather endpoints
 You are also going to have available two endpoints in order to fetch weather data from an API.
@@ -105,16 +104,16 @@ The data we receive is in the same format except for **temperature** and **tempe
 ## Assignment grading
 The grade of the assignment is going to based in four different levels of complexity
 
-### First level
-We need to make an app that calls the endpoint to get the weather for a city we choose from the available ones using fetch and shows the user the current temperature, the "feels like" temperature and an image representing the summary of the weather
+### First level (5 points)
+We need to make an app that calls the endpoint to get the weather for a city we choose from the available ones using fetch and shows the user the current temperature, humidity, the date (in a format similar to this February 25) and an image representing the summary of the weather
 
-### Second level
+### Second level (2 points)
 We are going to improve the app we made in the first level and instead of showing the temperature for the city we choose, we are going to give our user the ability to select the city.
 For that, we are going to call the endpoint to get the available cities, render a series of tabs (our whatever method you think is best for the user, like a select for example) that our user is going to be able to click and when one of those tabs are clicked we are going to show the same weather data we are showing in the first part for the selected city.
 
-### Third level
 
-We are going to improve the app we made in the second level and also show the weather information in an hourly format. For this, we can use the hourly field in the response we get from getting the weather for a city. We want to display the weather by hour for the rest of the day (if right now it's 18:15 we should be showing the current weather that we were showing in the other levels and the weather by hour for 19:00, 20:00, 21:00, 22:00, 23:00, 00:00)
-
-#### Fourth level
+#### Third level (2 points)
 We are going to improve the app we made in the third level and also show the weather information in an daily format. For this, we can use the daily field in the response we get from getting the weather for a city. We want to display the weather by day for the following four days.
+
+### Fourth level (1 point)
+We are going to improve the app we made in the second level and also show the weather information in an hourly format. For this, we can use the hourly field in the response we get from getting the weather for a city. We want to display the weather by hour for the rest of the day (if right now it's 18:15 we should be showing the current weather that we were showing in the other levels and the weather by hour for 19:00, 20:00, 21:00, 22:00, 23:00, 00:00)
