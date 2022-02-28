@@ -6,7 +6,7 @@
 This assignment is meant to be done in groups (use your regular work groups)
 
 ### Delivery
-Please join this GitHub classroom. https://classroom.github.com/classrooms/98690154-ie-web-programming-2022/assignments/weather-app-group-assignment
+Please join this GitHub classroom. https://classroom.github.com/a/rNTBeHM4
 
 ### Due date
 Please submit your assignment by Thursday the 10th of March
