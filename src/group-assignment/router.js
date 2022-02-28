@@ -26,10 +26,16 @@ groupAssignmentRouter.get(paths.getCities, (_req, res) => {
     res.json(getCities());
 });
 
-groupAssignmentRouter.get(paths.getWeather, async (req, res) => {
-    const { lat, lng } = getCityLocation(req.params.city.toLowerCase());
-    const weather = await getWeather(lat, lng);
-    res.json(weather);
+groupAssignmentRouter.get(paths.getWeather, async (req, res, next) => {
+    try {
+        const { lat, lng } = getCityLocation(req.params.city.toLowerCase());
+        const weather = await getWeather(lat, lng);
+        res.json(weather);
+    } catch(error) {
+        res.status(400).json({
+            errorMessage: `${req.params.city} is not available`
+        })
+    }
 });
 
 module.exports = groupAssignmentRouter;
