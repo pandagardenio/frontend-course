@@ -1,0 +1,9 @@
+.picture-gallery__canvas {
+    width: 100%;
+}
+
+.picture-gallery__canvas-image {
+    height: 400px;
+    display: block;
+    margin: auto;
+}

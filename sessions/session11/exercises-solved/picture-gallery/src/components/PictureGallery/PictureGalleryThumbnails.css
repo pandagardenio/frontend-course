@@ -1,0 +1,40 @@
+.picture-gallery__thumbnails {
+    width: 100%;
+    overflow: hidden;
+}
+
+.picture-gallery__thumbnails-items {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    transition: transform 0.5s;
+}
+
+.picture-gallery__thumbnails-item {
+    width: 250px;
+    height: 170px;
+    flex-shrink: 0;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.picture-gallery__thumbnail-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: black;
+    opacity: 0.4;
+}
+
+.picture-gallery__thumbnails-item--current .picture-gallery__thumbnail-overlay,
+.picture-gallery__thumbnails-item:hover .picture-gallery__thumbnail-overlay {
+    display: none;
+}
+
+.picture-gallery__thumbnail {
+    height: 100%;
+}

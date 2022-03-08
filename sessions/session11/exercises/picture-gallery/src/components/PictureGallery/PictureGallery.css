@@ -1,0 +1,6 @@
+.picture-gallery,
+.picture-gallery__canvas,
+.picture-gallery__controls,
+.picture-gallery__thumbnails {
+    margin: 24px 0;
+}
