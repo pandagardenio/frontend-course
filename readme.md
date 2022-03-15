@@ -12,6 +12,7 @@
 10. [Term Integration Project](./sessions/tip)
 11. [Session 11 - Fixing a Picture Gallery App](./sessions/session11)
 12. [Routing in React](./sessions/routing)
+13. [Session 12 - Closing](./sessions/session12)
 
 ## Useful Visual Studio Code extensions
 
