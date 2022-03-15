@@ -53,7 +53,7 @@ We basically need to run **npm install @mui/material @emotion/react @emotion/sty
 With this, we can use a lot of already made UI components. In this case, we are going to replace our plain boring buttons with Buttons from Material UI. We can see the documentation and how to use them here https://mui.com/components/buttons/. If you click on the **<>** symbols in the documentation blocks you can see code examples.
 
 ### Implementing the buttons from MUI
-We are going to replace the buttons in Picture Gallery Controls with the ones from Material UI. Play a little bit with the props variant and color of MUI Buttons to see how we have access to multiple types of different buttons.
+We are going to replace the buttons in Picture Gallery Controls with the ones from Material UI. Play a little bit with the props **variant** and **color** of MUI Buttons to see how we have access to multiple types of different buttons.
 
 ## Improving our Header
 The header of the app right now only shows a text. Let's try to see if there is another MUI component that can help us make it look better.
@@ -190,5 +190,4 @@ function PictureGallery(props) {
 }
 
 export default PictureGallery;
-
 ```

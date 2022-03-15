@@ -10,6 +10,9 @@
 8. [Session 9 - React Basics](./sessions/session9)
 9. [Group assignment](./sessions/assignment)
 10. [Term Integration Project](./sessions/tip)
+11. [Session 11 - Fixing a Picture Gallery App](./sessions/session11)
+12. [Routing in React](./sessions/routing)
+
 ## Useful Visual Studio Code extensions
 
  - [Visual Studio IntelliCode](https://marketplace.visualstudio.com/items?itemName=VisualStudioExptTeam.vscodeintellicode)
