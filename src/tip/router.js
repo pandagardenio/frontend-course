@@ -27,4 +27,20 @@ tipRouter.get('/data/radial-bar-chart', (_req, res) => {
     res.json(radialBarCharData);
 });
 
+tipRouter.post('/login', (req, res) => {
+    const { username, password } = req.body;
+    if (
+        (username === 'luis.grande' && password === '1234') ||
+        (username === 'marcelo.hardy' && password === '123456')
+    ) {
+        res.json({
+            username
+        });
+    } else {
+        res.status(401).json({
+            error: 'User login failed'
+        })
+    }
+});
+
 module.exports = tipRouter;
